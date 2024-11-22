@@ -1,11 +1,30 @@
 import React from 'react';
 import logo from "../../assets/images/logo.png";
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import { FaLock, FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
 
+    const { user, logOut } = useAuth();
+
+    const handleLogout = () => {
+        logOut()
+            .then(result => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Logout successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch()
+    }
+
     const navOptions = <>
-        <li> <Link>Payment</Link> </li>
+        <li> <Link to={"/payment"}>Payment</Link> </li>
         <li> <Link>Collect Admit</Link> </li>
     </>
 
@@ -45,7 +64,21 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end text-xl">
-                    <Link className="">Login</Link>
+                    {
+                        user ? <div className="flex items-center gap-3">
+                            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                {
+                                    user.photoURL ? <img className="rounded-full h-10 w-10" src={user.photoURL}></img> : <FaUserCircle className="h-10 w-10"></FaUserCircle>
+                                }
+                            </div>
+                            <Link onClick={handleLogout} className="font-semibold text-base">Log out</Link>
+                        </div> : <div className='flex items-center gap-3'>
+                            <FaLock></FaLock>
+                            <Link to="/login"><button>Login</button></Link>
+                            <span>Or</span>
+                            <Link to="/singUp"><button>Register</button></Link>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
