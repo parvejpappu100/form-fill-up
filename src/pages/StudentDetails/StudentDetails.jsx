@@ -7,7 +7,6 @@ import logo from "../../assets/images/logo.png";
 const StudentDetails = () => {
 
     const [axiosSecure] = useAxiosSecure();
-
     const { data: students = [], refetch } = useQuery(["students"], async () => {
         const res = await axiosSecure("/students");
         return res.data;
