@@ -3,11 +3,13 @@ import logo from "../../assets/images/logo.png";
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { FaLock, FaUserCircle } from 'react-icons/fa';
+import { FaAngleDown, FaLock, FaUserCircle } from 'react-icons/fa';
+import useAdmin from '../../hooks/useAdmin';
 
 const Navbar = () => {
 
     const { user, logOut } = useAuth();
+    const [isAdmin] = useAdmin();
 
     const handleLogout = () => {
         logOut()
@@ -26,12 +28,24 @@ const Navbar = () => {
     const navOptions = <>
         <li> <Link to={"/payment"}>Payment</Link> </li>
         <li> <Link>Collect Admit</Link> </li>
+        {isAdmin && <li>
+            <div className="dropdown dropdown-hover">
+                <label tabIndex={0} className='link-hover-custom link-style flex items-center cursor-pointer'><span>Dashboard</span> <FaAngleDown></FaAngleDown></label>
+                <ul tabIndex={0} className=" dropdown-content z-50 menu shadow mt-60 font-semibold text-black bg-white lg:w-[200px]">
+
+                    <li><Link to={"/allStudents"}>All Students</Link></li>
+                    <li><Link>Form Filled Up</Link></li>
+                    <li><Link to={"/allUsers"}>All Users</Link></li>
+                    <li><Link to={"/addStudents"}>Add Student</Link></li>
+                </ul>
+            </div>
+        </li>}
     </>
 
     return (
         <div className='bg-[#1460AB] text-white'>
-            <div className="navbar max-w-[1200px] mx-auto px-4">
-                <div className="navbar-start">
+            <div className="navbar max-w-[1200px] mx-auto px-4 flex justify-between items-center">
+                <div className="navbar-start text-black font-bold md:font-normal">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
@@ -53,17 +67,17 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <div className='flex items-center gap-4'>
+                    <div className=' items-center gap-4 hidden md:flex '>
                         <img className='w-16' src={logo} alt="" />
-                        <a className=" text-xl">Dhaka Polytechnic Institute</a>
+                        <a className=" text-white text-xl">Dhaka Polytechnic Institute</a>
                     </div>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-xl ">
+                <div className="navbar-center hidden lg:flex ">
+                    <ul className="menu menu-horizontal px-1 text-xl  ">
                         {navOptions}
                     </ul>
                 </div>
-                <div className="navbar-end text-xl">
+                <div className="navbar-end text-xl  max-w-[200px]">
                     {
                         user ? <div className="flex items-center gap-3">
                             <div className="tooltip tooltip-bottom" data-tip={user.displayName}>

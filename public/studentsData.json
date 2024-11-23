@@ -1,0 +1,110 @@
+[
+    {
+        
+        "name": "Parvej Hasan Pappu",
+        "board_roll": "658663",
+        "registration": "1502205480",
+        "image": "https://i.ibb.co.com/Tbnw0Js/pappu-linkedin.png",
+        "semester": "6th",
+        "shift": "Morning",
+        "section": "A",
+        "phone": "01974190770",
+        "father_name": "MD. Yousub Ali",
+        "mother_name": "MST. Parul Begum",
+        "session": "21-22",
+        "regulation": "2022",
+        "examinee_type": "Regular",
+        "department": "Computer SScience and Technology",
+        "technology_code": "85"
+    },
+    {
+        
+        "name": "Tonmoy Tanvir",
+        "board_roll": "658658",
+        "registration": "1502204580",
+        "image": "https://i.ibb.co.com/Tbnw0Js/pappu-linkedin.png",
+        "semester": "6th",
+        "shift": "Day",
+        "section": "A",
+        "phone": "01974190745",
+        "father_name": "MD. Kuddous",
+        "mother_name": "MST. Alia Begum",
+        "session": "21-22",
+        "regulation": "2022",
+        "examinee_type": "Regular",
+        "department": "Computer SScience and Technology",
+        "technology_code": "85"
+    },
+    {
+        
+        "name": "Nishad Rana",
+        "board_roll": "3454",
+        "registration": "150220567480",
+        "image": "https://i.ibb.co.com/Tbnw0Js/pappu-linkedin.png",
+        "semester": "4th",
+        "shift": "Morning",
+        "section": "B",
+        "phone": "01974140770",
+        "father_name": "MD. Yousub Ali",
+        "mother_name": "MST. Parul Begum",
+        "session": "21-22",
+        "regulation": "2022",
+        "examinee_type": "Regular",
+        "department": "Computer SScience and Technology",
+        "technology_code": "85"
+    },
+    {
+        
+        "name": "Rachib Rana",
+        "board_roll": "674544",
+        "registration": "156502205480",
+        "image": "https://i.ibb.co.com/Tbnw0Js/pappu-linkedin.png",
+        "semester": "4th",
+        "shift": "Day",
+        "section": "B",
+        "phone": "01974100770",
+        "father_name": "MD. Yousub Ali",
+        "mother_name": "MST. Parul Begum",
+        "session": "21-22",
+        "regulation": "2022",
+        "examinee_type": "Regular",
+        "department": "Computer SScience and Technology",
+        "technology_code": "85"
+    },
+    {
+        
+        "name": "Raju Akter",
+        "board_roll": "658353",
+        "registration": "150254205480",
+        "image": "https://i.ibb.co.com/Tbnw0Js/pappu-linkedin.png",
+        "semester": "2nd",
+        "shift": "Morning",
+        "section": "A",
+        "phone": "01974108770",
+        "father_name": "MD. Yousub Ali",
+        "mother_name": "MST. Parul Begum",
+        "session": "21-22",
+        "regulation": "2022",
+        "examinee_type": "Regular",
+        "department": "Computer SScience and Technology",
+        "technology_code": "85"
+    },
+    {
+        
+        "name": "Mominul Islam",
+        "board_roll": "650063",
+        "registration": "150992205480",
+        "image": "https://i.ibb.co.com/Tbnw0Js/pappu-linkedin.png",
+        "semester": "6th",
+        "shift": "Day",
+        "section": "B",
+        "phone": "01974190734",
+        "father_name": "MD. Yousub Ali",
+        "mother_name": "MST. Parul Begum",
+        "session": "21-22",
+        "regulation": "2022",
+        "examinee_type": "Regular",
+        "department": "Computer SScience and Technology",
+        "technology_code": "85"
+    }
+]

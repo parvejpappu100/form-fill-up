@@ -5,6 +5,7 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
+import { sendEmailVerification, updateProfile } from 'firebase/auth';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
@@ -90,7 +91,7 @@ const SingUp = () => {
                 axiosSecure.post("/users", savedUser)
                     .then(data => {
                         if (data.data.insertedId) {
-
+                            navigate("/payment")
                         }
                     })
             })
@@ -158,7 +159,7 @@ const SingUp = () => {
                                     {errors.image && <span className='text-red-600'>Image is required</span>}
                                 </div>
                                 <div className="form-control mt-6">
-                                    <input disabled={isDisable} className='bg-[#113366] text-white font-semibold py-3 rounded cursor-pointer hover:bg-[#ED1D24] duration-700 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-400' type="submit" value="Sing Up" />
+                                    <input disabled={isDisable} className='bg-[#1460AB] text-white font-semibold py-3 rounded cursor-pointer hover:bg-[#ED1D24] duration-700 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-400' type="submit" value="Sing Up" />
                                 </div>
                             </form>
                             <p className="text-red-400 text-center font-semibold my-3">{singUpError}</p>

@@ -30,7 +30,7 @@ const SocialLogin = () => {
                             })
                         }
                     })
-                navigate(from, { replace: true })
+                navigate("/payment")
             })
             .catch(error => {
                 console.log(error.message)
@@ -40,7 +40,7 @@ const SocialLogin = () => {
     return (
         <div className='max-w-xs mx-auto py-8'>
             <div className="divider text-xl font-semibold">Or continue with</div>
-            <div className='flex gap-5 justify-center text-[#15407F] text-4xl my-5'>
+            <div className='flex gap-5 justify-center text-[#1460AB] text-4xl my-5'>
                 <button onClick={handleGoogleLogin}><FaGoogle></FaGoogle></button>
                 <button><FaGithub></FaGithub></button>
                 <button><FaFacebook></FaFacebook></button>

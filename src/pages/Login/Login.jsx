@@ -25,7 +25,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 setLogInError("")
-                navigate(from, { replace: true });
+                navigate("/payment");
                 Swal.fire({
                     position: 'top',
                     icon: 'success',
@@ -42,7 +42,6 @@ const Login = () => {
 
     const handleRestPassword = (event) => {
         const email = userEmail;
-        console.log(email)
         if (!email) {
             Swal.fire({
                 icon: 'error',
@@ -88,7 +87,7 @@ const Login = () => {
                                     {errors.password && <span className='text-red-600'>Password is required</span>}
                                 </div>
                                 <div className="form-control mt-6">
-                                    <input className='bg-[#113366] text-white font-semibold py-3 rounded cursor-pointer hover:bg-[#ED1D24] duration-700' type="submit" value="Login" />
+                                    <input className='bg-[#1460AB] text-white font-semibold py-3 rounded cursor-pointer hover:bg-[#ED1D24] duration-700' type="submit" value="Login" />
                                 </div>
                             </form>
                             <p className="text-red-400 text-center mb-2 font-semibold">{logInError}</p>
