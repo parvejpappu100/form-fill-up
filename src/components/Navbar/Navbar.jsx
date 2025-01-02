@@ -27,14 +27,14 @@ const Navbar = () => {
 
     const navOptions = <>
         <li> <Link to={"/payment"}>Payment</Link> </li>
-        <li> <Link>Collect Admit</Link> </li>
+        <li> <Link to={'/collectAdmit'}>Collect Admit</Link> </li>
         {isAdmin && <li>
             <div className="dropdown dropdown-hover">
                 <label tabIndex={0} className='link-hover-custom link-style flex items-center cursor-pointer'><span>Dashboard</span> <FaAngleDown></FaAngleDown></label>
                 <ul tabIndex={0} className=" dropdown-content z-50 menu shadow mt-60 font-semibold text-black bg-white lg:w-[200px]">
 
                     <li><Link to={"/allStudents"}>All Students</Link></li>
-                    <li><Link>Form Filled Up</Link></li>
+                    <li><Link to={'/paidStudent'}>Form Filled Up</Link></li>
                     <li><Link to={"/allUsers"}>All Users</Link></li>
                     <li><Link to={"/addStudents"}>Add Student</Link></li>
                 </ul>
@@ -67,10 +67,10 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <div className=' items-center gap-4 hidden md:flex '>
+                    <a href='/' className=' items-center gap-4 hidden md:flex '>
                         <img className='w-16' src={logo} alt="" />
-                        <a className=" text-white text-xl">Dhaka Polytechnic Institute</a>
-                    </div>
+                        <h3 className=" text-white text-xl">Dhaka Polytechnic Institute</h3>
+                    </a>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 text-xl  ">

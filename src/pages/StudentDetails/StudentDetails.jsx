@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from 'react-query';
 import logo from "../../assets/images/logo.png";
@@ -18,9 +18,11 @@ const StudentDetails = () => {
     const student = students?.find(student => student._id == id);
 
     return (
-        <div className='max-w-[1000px] mx-auto my-20 '>
+        <div className='max-w-[1000px] mx-auto my-20 px-4'>
             <div className='flex items-center justify-center my-5'>
-                <button className='btn   bg-[#1460AB] hover:bg-[#1460AB] text-white '>Update</button>
+                <Link to={`/updateStudent/${id}`}>
+                    <button className='btn   bg-[#1460AB] hover:bg-[#1460AB] text-white '>Update</button>
+                </Link>
             </div>
             <div className='  bg-white p-10 shadow-md'>
                 <div className='border border-black'>

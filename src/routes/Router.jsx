@@ -12,12 +12,15 @@ import PaymentSuccess from '../pages/PaymentSuccess/PaymentSuccess';
 import PrivateRoutes from './PrivateRoutes';
 import AdminRoutes from './AdminRoutes';
 import StudentDetails from '../pages/StudentDetails/StudentDetails';
+import UpdateStudent from '../pages/Dashboard/UpdateStudent/UpdateStudent';
+import PaidStudent from '../pages/Dashboard/PaidStudent/PaidStudent';
+import CollectAdmit from '../pages/CollectAdmit/CollectAdmit';
 
 const router = createBrowserRouter([
     {
-        path:"/",
+        path: "/",
         element: <Main></Main>,
-        children:[
+        children: [
             {
                 path: "/payment",
                 element: <Home></Home>
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "singUp",
                 element: <SingUp></SingUp>
+            },
+            {
+                path: 'collectAdmit',
+                element: <CollectAdmit></CollectAdmit>
             },
             // * Dashboard:
             {
@@ -47,6 +54,16 @@ const router = createBrowserRouter([
                 path: "studentDetails/:id",
                 element: <PrivateRoutes><AdminRoutes><StudentDetails></StudentDetails></AdminRoutes></PrivateRoutes>
             },
+            {
+                path: "updateStudent/:id",
+                element: <PrivateRoutes><AdminRoutes><UpdateStudent></UpdateStudent></AdminRoutes></PrivateRoutes>
+            },
+            {
+                path: "paidStudent",
+                element: <PrivateRoutes><AdminRoutes><PaidStudent></PaidStudent></AdminRoutes></PrivateRoutes>
+            },
+
+            // *-----------
             {
                 path: "paymentError",
                 element: <PaymentError></PaymentError>

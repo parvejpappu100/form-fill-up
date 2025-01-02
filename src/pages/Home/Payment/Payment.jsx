@@ -25,11 +25,11 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setStudent(data))
     }, [search]);
+    console.log(students)
 
     const handleSearch = () => {
         const value = searchRef.current.value;
         setSearch(value);
-        console.log(value)
     };
 
 
